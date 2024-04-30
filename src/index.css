@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  min-height: 100dvh;
+  font-family: "Montserrat", sans-serif;
+  background-color: #212121;
+  color: #fff;
+  padding-bottom: 2rem;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+h2 {
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 1.4rem;
+  padding: 0;
+  margin: 0;
+}
+
+code {
+  background-color: #333;
+  color: #fff;
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 100%;
+  text-wrap: wrap;
+}
+blockquote {
+  background-color: #555;
+  color: #fff;
+  border-radius: 4px;
+  padding: 1rem;
+  border-left: 8px solid #1e96a0;
+  font-style: italic;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header {
+  max-width: 90rem;
+  margin: 1rem auto;
+}
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-header button {
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  transition: all 0.2s;
+}
+.main-header button:hover {
+  transform: scale(1.2);
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+.content-header {
+  background-color: #111;
+  padding: 2px 1rem;
+  border: 0.5px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content-header h2 {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.textarea {
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  border: none;
+  font-size: 1.4rem;
+  white-space: pre-wrap;
+  resize: none;
+  background-color: #292929;
+  color: #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+.textarea:focus {
+  outline-style: none;
+}
+.markdown {
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  white-space: pre-wrap;
+  padding: 12px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #292929;
+  padding-bottom: 2rem;
+}
+.small-header {
+  display: none;
+  background-color: #111;
+  padding: 2px 1rem;
+  border: 0.5px solid #fff;
+  font-size: 2rem;
+}
+.modal {
+  max-width: 24rem;
+  width: 100%;
+  padding: 2.4rem 1.6rem;
+  top: 20rem;
+  left: 50%;
+  border: none;
+  position: relative;
+  margin: 0 4px;
+}
+.modal:focus {
+  outline: none;
+}
+.modal::backdrop {
+  background-color: #171817c3;
+}
+.modal .closebtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.4rem;
+}
+.modal .closebtn:hover {
+  color: red;
+}
+
+.save-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.save-form h2 {
+  font-size: 2rem;
+}
+.save-form label {
+  font-size: 1.4rem;
+}
+.save-form input {
+  width: 100%;
+  padding: 4px;
+  font-size: 1.4rem;
+  border-bottom: 5px solid #ccc;
+}
+.save-form input:focus {
+  outline: none;
+  border-bottom: 5px solid black;
+}
+.save-form .actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.save-form button {
+  padding: 4px 8px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #444;
+}
+.save-form button:hover {
+  background-color: #222;
+}
+
+.saved-markdowns {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+.saved-markdowns li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+.saved-markdowns button {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+
+  font-size: 1.4rem;
+}
+.saved-markdowns .select {
+  flex-grow: 3;
+  text-align: start;
+  padding: 8px;
+  border-radius: 4px;
+}
+.saved-markdowns .delete {
+  width: 24px;
+}
+.saved-markdowns .select:hover {
+  background-color: #ddd;
+}
+.saved-markdowns .delete:hover {
+  color: red;
+}
+@media (max-width: 900px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .content .textarea {
+    min-height: 75vh;
+  }
+  .small-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .content-header {
+    display: none;
+  }
+
+  .main-header h1 span {
+    display: none;
+  }
+  .modal {
+    max-width: 20rem;
+  }
+}
