@@ -11,37 +11,40 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+*:disabled {
+  cursor: not-allowed;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
 
 h1 {
   font-size: 3rem;
   font-weight: bold;
-  padding: 0;
-  margin: 0;
 }
 h2 {
   font-size: 3rem;
-  padding: 0;
-  margin: 0;
   font-weight: 400;
 }
 h3 {
   font-size: 2rem;
   font-weight: bold;
-  padding: 0;
-  margin: 0;
 }
 
 h4 {
   font-size: 2rem;
   font-weight: 400;
-  padding: 0;
-  margin: 0;
 }
 
 p {
   font-size: 1.4rem;
-  padding: 0;
-  margin: 0;
 }
 
 code {
@@ -66,7 +69,6 @@ button {
   cursor: pointer;
   transition: all 0.2s;
 }
-
 .header {
   max-width: 90rem;
   margin: 1rem auto;
@@ -81,14 +83,13 @@ button {
   background-color: transparent;
   border: none;
   color: #fff;
-  transition: all 0.2s;
 }
 .main-header button:hover {
-  transform: scale(1.2);
+  color: #aaa;
 }
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   min-height: 100vh;
   max-width: 90rem;
   margin: 0 auto;
@@ -133,6 +134,7 @@ button {
   min-height: 100vh;
   background-color: #292929;
   padding-bottom: 2rem;
+  overflow-x: scroll;
 }
 .small-header {
   display: none;
@@ -240,7 +242,29 @@ button {
 .saved-markdowns .delete:hover {
   color: red;
 }
+.error {
+  font-size: 1rem;
+  color: red;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 @media (max-width: 900px) {
+  .main-header {
+    width: 100%;
+  }
   .content {
     display: flex;
     flex-direction: column;
